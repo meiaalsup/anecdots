@@ -1,0 +1,30 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias sudo='sudo '
+alias python='/usr/local/bin/python3'
+alias vim='nvim'
+alias pip='pip3'
+
+alias ll='ls -lsGahFt'
+alias jn='jupyter notebook'
+alias pl='pdflatex'
+
+alias root='cd ~/../../'
+alias dev='cd ~/dev/' 
+alias mit='cd ~/dev/MIT/'
+alias scratch='cd ~/dev/scratch/'
+alias dropbox='cd ~/Dropbox\ \(MIT\)/'
+alias db='cd ~/Dropbox\ \(MIT\)/'
+alias 6.006='cd ~/dev/mit/6.006/'
+alias 006='cd ~/dev/mit/6.006/staff/19spring/'
+alias sshathena='ssh malsup@athena.dialup.mit.edu'
+
+alias gs='git status'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias punch='git push -f'
+alias ga='git add'
+alias gd='git diff'
+alias gf='git fetch'
+alias gr='git rebase'
