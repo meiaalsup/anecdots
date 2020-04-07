@@ -21,11 +21,15 @@ alias dropbox='cd ~/Dropbox\ \(MIT\)/'
 alias db='cd ~/Dropbox\ \(MIT\)/'
 alias il='cd ~/dev/research/mitei/india-load'
 alias mitei='cd ~/dev/research/mitei'
-alias sshathena='ssh malsup@athena.dialup.mit.edu'
-alias sshs='ssh malsup@txe1-login.mit.edu'
 
 alias garmin='cd /Volumes/GARMIN/Garmin'
 
+# TODO: move these to ssh config
+alias sshathena='ssh malsup@athena.dialup.mit.edu'
+alias sshs='ssh malsup@txe1-login.mit.edu'
+
+
+# TODO: move these to git specific alias config
 alias gs='git status'
 alias gb='git branch'
 alias gc='git commit'
