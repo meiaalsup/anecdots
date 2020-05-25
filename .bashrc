@@ -1,14 +1,12 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-alias sudo='sudo '
-alias python='/usr/local/bin/python3'
 alias vim='nvim'
-alias pip='pip3'
 
 alias ll='ls -lsGahF'
 alias jn='jupyter notebook'
 alias pl='pdflatex'
 alias julia="/Applications/Julia-1.2.app/Contents/Resources/julia/bin/julia"
+alias vb='VBoxManage'
 
 alias root='cd ~/../../'
 alias dev='cd ~/dev/' 
@@ -34,6 +32,7 @@ alias sshs='ssh malsup@txe1-login.mit.edu'
 alias gs='git status'
 alias gb='git branch'
 alias gc='git commit'
+alias gco='git checkout'
 alias gca='git commit --amend'
 alias punch='git push -f'
 alias gp='git push'
