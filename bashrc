@@ -1,8 +1,19 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias vim='nvim'
+alias sudo='sudo '
 
-alias ll='ls -lsGahF'
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+# ls aliases
+alias ll='ls -lsGahF ${colorflag}'
+
+
 alias jn='jupyter notebook'
 alias pl='pdflatex'
 alias julia="/Applications/Julia-1.2.app/Contents/Resources/julia/bin/julia"
@@ -12,10 +23,12 @@ alias root='cd ~/../../'
 alias dev='cd ~/dev/' 
 alias mit='cd ~/dev/mit/'
 alias ids='cd ~/dev/mit/old/IDS.131/'
-alias 824='cd ~/dev/mit/6.824/'
-alias sc='cd ~/dev/mit/6.824/smart-cache/'
+alias 824='cd ~/dev/mit/classes/6.824/'
+alias sc='cd ~/dev/mit/classes/6.824/smart-cache/'
 alias re='cd ~/dev/research/'
-alias scratch='cd ~/dev/scratch/'
+alias anecdots='cd ~/dev/anecdots/'
+alias anecdotes='cd ~/dev/anecdots/'
+alias dots='cd ~/dev/anecdots/'
 alias dropbox='cd ~/Dropbox\ \(MIT\)/'
 alias db='cd ~/Dropbox\ \(MIT\)/'
 alias il='cd ~/dev/research/mitei/india-load'
