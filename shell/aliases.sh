@@ -27,6 +27,7 @@ else # OS X `ls`
 fi
 
 # ls aliases
+alias l='ls -lsGahF ${colorflag}'
 alias ll='ls -lsGahF ${colorflag}'
 
 # Protect against overwriting

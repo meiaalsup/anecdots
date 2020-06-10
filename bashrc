@@ -12,6 +12,7 @@ fi
 
 # ls aliases
 alias ll='ls -lsGahF ${colorflag}'
+alias l='ls -lsGahF ${colorflag}'
 
 
 alias jn='jupyter notebook'
