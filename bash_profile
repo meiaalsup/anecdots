@@ -4,6 +4,8 @@ if [ -s ~/.bashrc ]; then source ~/.bashrc; fi
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
+export PATH=$PATH:$HOME/.local/bin
+
 export GITHUB_USERNAME='meiaalsup'
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -30,3 +32,5 @@ mkdir -p $WORKON_HOME
 
 PATH="/Applications/Julia-1.2.app/Contents/Resources/julia/bin:${PATH}"
 
+# make python multiprocessing Pool work: https://github.com/ansible/ansible/issues/32499
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
