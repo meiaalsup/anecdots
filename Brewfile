@@ -17,7 +17,7 @@ brew "wget"
 brew "ack"
 brew "tldr"
 brew "wdiff"
-
+brew "reattach-to-user-namespace"
 
 # Install Newest Bash
 brew "bash"
