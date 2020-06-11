@@ -17,6 +17,8 @@ alias sc='cd ~/dev/mit/6.824/smart-cache/'
 alias anecdotes='cd ~/dev/anecdotes/'
 alias mitei='cd ~/dev/research/mitei'
 alias il='cd ~/dev/research/mitei/india-load'
+alias merra2='cd ~/dev/merra-2'
+alias merra='cd ~/dev/merra-2'
 alias garmin='cd /Volumes/GARMIN/Garmin'
 
 # Detect which `ls` flavor is in use
