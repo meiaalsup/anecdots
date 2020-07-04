@@ -37,12 +37,13 @@ brew "tig"
 brew "the_silver_searcher"
 brew "imagemagick"
 brew "ncdu" # ncdu- ncurses disk usage- for sorting directories
+brew "st" # command line simple stats
+brew "broot" # like tree but fancier
+brew "gnuplot"
 
 # Cask installation
 cask "google-chrome"
 cask "iterm2"
 cask "postman"
-
-
 
 

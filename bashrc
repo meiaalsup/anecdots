@@ -59,3 +59,5 @@ alias ga='git add'
 alias gd='git diff'
 alias gf='git fetch'
 alias gr='git rebase'
+
+source /Users/meiaalsup/.config/broot/launcher/bash/br

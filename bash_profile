@@ -34,3 +34,5 @@ PATH="/Applications/Julia-1.2.app/Contents/Resources/julia/bin:${PATH}"
 
 # make python multiprocessing Pool work: https://github.com/ansible/ansible/issues/32499
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+source /Users/meiaalsup/.config/broot/launcher/bash/br
