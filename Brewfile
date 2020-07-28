@@ -2,35 +2,41 @@
 # Usage: `brew bundle` - automatically looks at Brewfile
 
 tap "homebrew/cask"
+tap "homebrew/bundle"
 
 # set arguments for all 'brew cask install' commands
 cask_args appdir: "~/Applications"
 
 # Core utilities
 
-brew "coreutils"
+brew "coreutils" # update (Mac defaults are out of date)
 brew "moreutils"
 brew "findutils"
 brew "htop"
 brew "tmux"
+brew "grep"
+brew "vim"
 brew "wget"
 brew "ack"
 brew "tldr"
 brew "wdiff"
 brew "reattach-to-user-namespace"
+brew "bat" # better cat :) (color + less)
+brew "mosh"
 
 # Install Newest Bash
 brew "bash"
 brew "bash-completion"
 
 # Programming language related installations
-brew "go"
 brew "pyenv"
 brew "cmake"
 brew "clang-format"
+#brew "yarn"
+#brew "go"
 
 # Git utilities
-brew "git"
+#brew "git"
 brew "tig"
 
 # Other Useful binaries
@@ -38,12 +44,18 @@ brew "the_silver_searcher"
 brew "imagemagick"
 brew "ncdu" # ncdu- ncurses disk usage- for sorting directories
 brew "st" # command line simple stats
+brew "tree" # directory navigation
 brew "broot" # like tree but fancier
-brew "gnuplot"
+brew "gnuplot" # command line plotting / graphing library
 
 # Cask installation
-cask "google-chrome"
 cask "iterm2"
-cask "postman"
+cask "visual-studio-code"
+cask "google-chrome"
+#cask "firefox"
+#cask "virtualbox" # might require permissions in security settings
+#cask "postman"
+#cask "slack"
+cask "whatsapp"
 
 

@@ -6,8 +6,6 @@ if [ -s ~/.bashrc ]; then source ~/.bashrc; fi
 
 export PATH=$PATH:$HOME/.local/bin
 
-export GITHUB_USERNAME='meiaalsup'
-
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 parse_git_branch() {
