@@ -19,8 +19,6 @@ brew "vim"
 brew "wget"
 brew "ack"
 brew "tldr"
-brew "wdiff"
-brew "reattach-to-user-namespace"
 brew "bat" # better cat :) (color + less)
 brew "mosh"
 
@@ -45,8 +43,11 @@ brew "imagemagick"
 brew "ncdu" # ncdu- ncurses disk usage- for sorting directories
 brew "st" # command line simple stats
 brew "tree" # directory navigation
+brew "wdiff"
 brew "broot" # like tree but fancier
 brew "gnuplot" # command line plotting / graphing library
+brew "reattach-to-user-namespace"
+brew "fzf"
 
 # Cask installation
 cask "iterm2"

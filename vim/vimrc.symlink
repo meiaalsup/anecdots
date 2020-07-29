@@ -72,17 +72,12 @@ endif
 
 " use 4 spaces instead of tabs during formatting
 set autoindent
-set smartindent
-set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 filetype plugin indent on " enable file type detection
 
-" auto-indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
 
 " Display tabs and trailing spaces visually
 " set list listchars=tab:\ \ ,trail:·
@@ -130,8 +125,7 @@ imap <c-d> <esc>ddi
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP' 
 
-
-
+map <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""" local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")
