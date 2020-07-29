@@ -85,7 +85,7 @@ nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
 
