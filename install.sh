@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # inspiration from many sources:
 # * //github.com/jacobkahn/dotfiles
 # * //github.com/holman/dotfiles
@@ -28,16 +28,18 @@ user () {
 
 info "Configuring from scratch ..."
 
-DOTFILES="$(pwd -P)"
+export DOTFILES="$HOME/anecdots"
 
 # Argument parsing
 MAC_SETUP=false;
+LINUX_SETUP=false;
 GIT_SETUP=false;
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
     # Install additional dependencies
     -m|--mac|--macsetup) MAC_SETUP=true; shift 1;;
+    -l|--linux|--linuxsetup) LINUX_SETUP=true; shift 1;;
     -g|--git|--gitsetup) GIT_SETUP=true; shift 1;;
     -*) echo "unknown option: $1" >&2; exit 1;;
     *) echo "unknown option: $1" >&2; exit 1;;
@@ -82,6 +84,11 @@ setup_gitconfig () {
     
 }
 
+setup_linux() {
+  echo "Installing packages for Linux"
+  source linux.sh
+}
+
 setup_mac() {
     echo "Setting up Mac"
 
@@ -103,7 +110,7 @@ setup_mac() {
     # ln -s "${PRIVATEDIR}/pypirc" ~/.pypirc
 }
 
-link_file () {
+link_file() {
   local src=$1 dst=$2
 
   local overwrite=
@@ -183,6 +190,7 @@ install_dotfiles () {
   # don't want all the mumbo jumbo from .git (version control files)
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
+    info "linking $src"
     dst="$HOME/.$(basename "${src%.*}")"  
     link_file "$src" "$dst"
   done
@@ -193,6 +201,16 @@ install_dotfiles () {
   git submodule update
 }
 
+
+vim_setup() {
+  info 'setting up vim'
+  
+  mkdir -p "$HOME/.vim"
+  ln -sfn "$DOTFILES/vim/pack" "$HOME/.vim/pack"
+  
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
 
 
 ##### Configure Shell #####
@@ -210,6 +228,7 @@ fi
 ##### Set Up Dotfiles #####
 info "setup dotfiles"
 install_dotfiles
+vim_setup
 
 ##### Git Config #####
 if [ "$GIT_SETUP" == "true" ]
@@ -219,6 +238,15 @@ else
   info "skipping git config setup"
 fi
 unset GIT_SETUP
+
+##### Linux Setup #####
+if [ "$LINUX_SETUP" == "true" ]
+then
+  setup_linux
+else
+  info "skipping linux setup"
+fi
+unset LINUX_SETUP
 
 ##### MacOS Setup #####
 if [ "$MAC_SETUP" == "true" ]

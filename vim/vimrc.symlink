@@ -76,7 +76,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-filetype plugin indent on " enable file type detection
 
 
 " Display tabs and trailing spaces visually
@@ -118,16 +117,23 @@ map <space> viw
 " allow line deletion in insert mode
 imap <c-d> <esc>ddi
 
+nnoremap <PageUp> <C-u>
+nnoremap <PageDown> <C-d>
 
+filetype plugin indent on " enable file type detection
 
 """"""""""""""" Plugin Configuration """""""""""""""""
-" fuzzy find CtrlP https://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP' 
-
 map <C-n> :NERDTreeToggle<CR>
 
-""""""""""""""" local customizations in ~/.vimrc_local
+" fuzzy find
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+call plug#end()
+
+map <silent> <C-f> :BLines<CR>
+map <silent> <C-n> :FZF!<CR>
+
+" local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE

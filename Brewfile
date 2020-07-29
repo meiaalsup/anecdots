@@ -48,6 +48,7 @@ brew "broot" # like tree but fancier
 brew "gnuplot" # command line plotting / graphing library
 brew "reattach-to-user-namespace"
 brew "fzf"
+brew "zsh-autosuggestions"
 
 # Cask installation
 cask "iterm2"

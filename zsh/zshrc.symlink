@@ -11,7 +11,7 @@ config_files=($DOTFILES/**/*.zsh)
 # load each one
 for file in ${(M)config_files:#*/*.zsh}
 do
-    source $file
+  source $file
 done
 
 # Enable completions
@@ -74,10 +74,11 @@ plugins=(
   virtualenv
   tmux
   fzf
+  zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 
 # allow local customizations in the ~/.zshrc_local file
 if [ -f ~/.zshrc_local ]; then
-        source ~/.zshrc_local
+    source ~/.zshrc_local
 fi

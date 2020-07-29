@@ -12,14 +12,17 @@ alias dotfiles="cd $DOTFILES"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+  colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+  colorflag="-G"
 fi
 
 # ls aliases
 alias l='ls -lsGahF ${colorflag}'
 alias ll='ls -lsGahF ${colorflag}'
+
+# clear aliases
+# alias cl='clear'
 
 # Protect against overwriting
 alias cp='cp -i'
