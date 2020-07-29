@@ -76,3 +76,8 @@ plugins=(
   fzf
 )
 source $ZSH/oh-my-zsh.sh
+
+# allow local customizations in the ~/.zshrc_local file
+if [ -f ~/.zshrc_local ]; then
+        source ~/.zshrc_local
+fi
