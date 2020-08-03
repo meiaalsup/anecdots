@@ -1,4 +1,4 @@
-#!/bin/zsh
+# !/bin/zsh
 # inspiration from many sources:
 # * //github.com/jacobkahn/dotfiles
 # * //github.com/holman/dotfiles
@@ -190,8 +190,8 @@ install_dotfiles () {
   # don't want all the mumbo jumbo from .git (version control files)
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
-    info "linking $src"
     dst="$HOME/.$(basename "${src%.*}")"  
+    info "linking $src to $dst"
     link_file "$src" "$dst"
   done
 
