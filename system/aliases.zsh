@@ -8,6 +8,8 @@ alias anecdotes="cd $DOTFILES" # for typos sake
 alias anecdots="cd $DOTFILES"
 alias dots="cd $DOTFILES"
 alias dotfiles="cd $DOTFILES"
+alias ldots="cd $L_DOTS"
+alias dotsl="cd $L_DOTS"
 
 
 # Detect which `ls` flavor is in use
@@ -22,7 +24,7 @@ alias l='ls -lsGahF ${colorflag}'
 alias ll='ls -lsGahF ${colorflag}'
 
 # clear aliases
-# alias cl='clear'
+alias cl='clear'
 
 # Protect against overwriting
 alias cp='cp -i'

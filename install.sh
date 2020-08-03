@@ -190,7 +190,7 @@ install_dotfiles () {
   # don't want all the mumbo jumbo from .git (version control files)
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
-    dst="$HOME/.$(basename "${src%.*}")"  
+    dst="$HOME/.$(basename "${src%.*}")"
     info "linking $src to $dst"
     link_file "$src" "$dst"
   done
@@ -204,10 +204,10 @@ install_dotfiles () {
 
 vim_setup() {
   info 'setting up vim'
-  
+
   mkdir -p "$HOME/.vim"
   ln -sfn "$DOTFILES/vim/pack" "$HOME/.vim/pack"
-  
+
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
@@ -229,6 +229,7 @@ fi
 info "setup dotfiles"
 install_dotfiles
 vim_setup
+
 
 ##### Git Config #####
 if [ "$GIT_SETUP" == "true" ]

@@ -48,6 +48,7 @@ set -g history-limit 10000
 
 # start pane numbers at 1 instead of 0 (matches keyboard)
 setw -g pane-base-index 1
+set -g base-index 1
 
 # prevent renames of already-named windows by processes
 set-option -g allow-rename off
