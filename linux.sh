@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 sudo apt install tldr
 sudo apt install htop

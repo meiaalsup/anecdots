@@ -86,7 +86,7 @@ setup_gitconfig () {
 
 setup_linux() {
   echo "Installing packages for Linux"
-  source linux.sh
+  source "$DOTFILES/linux.sh"
 }
 
 setup_mac() {
