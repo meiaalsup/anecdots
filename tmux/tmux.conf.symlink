@@ -6,8 +6,6 @@ bind-key C-q send-prefix
 # split panes with | and - or h and v
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
-bind v split-window -v -c "#{pane_current_path}"
-bind h split-window -h -c "#{pane_current_path}"
 
 # remap move between windows to control-arrow
 bind -n C-Left select-pane -L
@@ -23,8 +21,17 @@ bind -n C-l select-pane -R
 # quickly reload tmux configuration
 bind-key C-r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
+# switch windows using modifier + (Shift + {Left, Right} || "(" or ")")
+bind S-Right next-window
+bind S-Left previous-window
+bind ( next-window
+bind ) previous-window
+
 # Improve colors
 set -g default-terminal 'screen-256color'
+# LOOK
+set -g status-bg cyan
+
 
 # tmux mouse mode to enable clickable window, clickable pane, and mouse resize
 # https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
@@ -43,8 +50,8 @@ bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pb
 unbind -T copy-mode-vi Enter
 bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
 
-# set scrollback buffer to 10000
-set -g history-limit 10000
+# set scrollback buffer to 30000
+set -g history-limit 30000
 
 # start pane numbers at 1 instead of 0 (matches keyboard)
 setw -g pane-base-index 1
