@@ -113,6 +113,11 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+nnoremap <C-a>j <C-w>j
+nnoremap <C-a>h <C-w>h
+nnoremap <C-a>k <C-w>k
+nnoremap <C-a>l <C-w>l
+
 " make '_' move the line upward 
 map _ ddkP
 
