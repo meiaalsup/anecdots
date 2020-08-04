@@ -88,6 +88,9 @@ set noerrorbells visualbell t_vb=
 
 " Unbind Q, in normal mode enters Ex mode.
 nmap Q <Nop> "
+"inoremap <Esc> <Nop>
+
+imap jk <Esc>
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
