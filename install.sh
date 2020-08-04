@@ -82,7 +82,6 @@ setup_gitconfig () {
   else
     info 'references already cloned - skipping'
   fi
-    
 }
 
 setup_linux() {
@@ -226,13 +225,8 @@ else
 fi
 
 
-##### Set Up Dotfiles #####
-info "setup dotfiles"
-install_dotfiles
-vim_setup
-
-
 ##### Git Config #####
+# needs to be before dotfiles and file linking to link git config
 if [ "$GIT_SETUP" == "true" ]
 then
   setup_gitconfig
@@ -240,6 +234,12 @@ else
   info "skipping git config setup"
 fi
 unset GIT_SETUP
+
+##### Set Up Dotfiles #####
+info "setup dotfiles"
+install_dotfiles
+vim_setup
+
 
 ##### Linux Setup #####
 if [ "$LINUX_SETUP" == "true" ]
