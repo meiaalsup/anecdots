@@ -27,6 +27,9 @@ bind S-Left previous-window
 bind ( next-window
 bind ) previous-window
 
+# synchornize panes shortcuts
+bind C-a setw synchronize-panes
+
 # Improve colors
 set -g default-terminal 'screen-256color'
 # LOOK
