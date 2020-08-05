@@ -12,7 +12,7 @@
 set nocompatible
 
 " share clipboard to make copy paste work
-set clipboard=unnamed
+set clipboard=unnamedplus
  
 " Turn on syntax highlighting.
 syntax on
@@ -141,10 +141,23 @@ map <C-n> :NERDTreeToggle<CR>
 " fuzzy find
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'git@github.com:vim-syntastic/syntastic.git'
 call plug#end()
 
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
+
+" syntastic
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")
