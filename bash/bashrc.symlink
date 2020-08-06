@@ -1,4 +1,3 @@
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias vim='nvim'
 alias sudo='sudo '
@@ -47,4 +46,3 @@ alias sshathena='ssh malsup@athena.dialup.mit.edu'
 alias sshs='ssh malsup@txe1-login.mit.edu'
 
 
-source /Users/meiaalsup/.config/broot/launcher/bash/br
