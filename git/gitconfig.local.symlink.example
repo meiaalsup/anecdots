@@ -4,4 +4,4 @@
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 [pull]
-        rebase = false
+        rebase = true
