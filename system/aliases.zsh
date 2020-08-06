@@ -32,3 +32,8 @@ alias mv='mv -i'
 
 # print each PATH on separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# other helpful aliases
+alias jn='jupyter notebook'
+alias vb='VBoxManage'
+alias garmin='cd /Volumes/GARMIN/Garmin'
