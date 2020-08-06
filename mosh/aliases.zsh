@@ -1,4 +1,4 @@
 alias mosh='mosh -6'
-dev() {
+mdev() {
   mosh -6 $1 -- tmux a
 }
