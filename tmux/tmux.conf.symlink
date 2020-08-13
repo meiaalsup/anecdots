@@ -19,8 +19,8 @@ bind-key C-r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 # switch windows using modifier + (Shift + {Left, Right} || "(" or ")")
 bind S-Right next-window
 bind S-Left previous-window
-bind ( next-window
-bind ) previous-window
+bind ) next-window
+bind ( previous-window
 
 # synchornize panes shortcuts
 bind C-a setw synchronize-panes
