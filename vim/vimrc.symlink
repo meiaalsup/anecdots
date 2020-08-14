@@ -140,11 +140,15 @@ map <C-n> :NERDTreeToggle<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'git@github.com:vim-syntastic/syntastic.git'
+Plug 'git@github.com:mhartington/oceanic-next'
 call plug#end()
 
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
+
+" Theme and color scheme
+colorscheme OceanicNext
 " syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
