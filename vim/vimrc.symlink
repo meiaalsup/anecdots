@@ -113,10 +113,8 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-nnoremap <C-a>j <C-w>j
-nnoremap <C-a>h <C-w>h
-nnoremap <C-a>k <C-w>k
-nnoremap <C-a>l <C-w>l
+" remap C-a as modifier for vim window management
+nnoremap <C-a> <C-w>
 
 " make '_' move the line upward 
 map _ ddkP
@@ -148,16 +146,14 @@ map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
 " syntastic
-
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")

@@ -30,23 +30,21 @@ set -g default-terminal 'screen-256color'
 # LOOK
 set -g status-bg cyan
 
-
 # tmux mouse mode to enable clickable window, clickable pane, and mouse resize
 # https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 set -g mouse on
+
 
 # fix copy paste in tmux 
 # SEE: https://www.joshmcarthur.com/til/2019/06/04/tmux-system-clipboard-copy-paste-on-mac-os.html
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
-
 # Setup 'v' to begin selection as in Vim
 bind-key -T copy-mode-vi v send-keys -X  begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
-
+#bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
 # Update default binding of `Enter` to also use copy-pipe
 unbind -T copy-mode-vi Enter
-bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+#bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
 
 # set scrollback buffer to 30000
 set -g history-limit 30000
@@ -54,12 +52,6 @@ set -g history-limit 30000
 # start pane numbers at 1 instead of 0 (matches keyboard)
 setw -g pane-base-index 1
 set -g base-index 1
-
-# prevent renames of already-named windows by processes
-set-option -g allow-rename off
-# Setup 'v' to begin selection as in Vim
-bind-key -T copy-mode-vi v send-keys -X  begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
 
 # prevent renames of already-named windows by processes
 set-option -g allow-rename off
