@@ -83,10 +83,7 @@ set expandtab
 " set textwidth=80
 
 
-" Display tabs and trailing spaces visually
-" set list listchars=tab:\ \ ,trail:·
-
-set nowrap       "Don't wrap lines
+set nowrap "Don't wrap lines
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
@@ -115,6 +112,9 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " remap C-a as modifier for vim window management
 nnoremap <C-a> <C-w>
+
+set splitbelow
+set splitright
 
 " make '_' move the line upward 
 map _ ddkP
