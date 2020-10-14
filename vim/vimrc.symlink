@@ -25,6 +25,9 @@ set number
 " show line and column in status bar
 set ruler
 
+" set column marker at 80 characters
+set colorcolumn=80
+
 " relative line numbering: enables jumping up or down to a particular line, by
 " {count}k to go up or {count}j to go down
 set relativenumber
