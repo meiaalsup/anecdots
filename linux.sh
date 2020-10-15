@@ -7,3 +7,4 @@ sudo apt install wget
 sudo apt install fzf
 sudo apt install wdiff
 sudo apt install zsh-autosuggestions
+sudo apt install shellcheck

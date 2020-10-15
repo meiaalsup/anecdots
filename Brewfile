@@ -49,6 +49,7 @@ brew "gnuplot" # command line plotting / graphing library
 brew "reattach-to-user-namespace"
 brew "fzf"
 brew "zsh-autosuggestions"
+brew "shellcheck" # useful in vim syntastic and as stand-alone
 
 # Cask installation
 cask "iterm2"

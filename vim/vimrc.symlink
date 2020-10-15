@@ -1,5 +1,5 @@
 " Much of this vim config was inspired by:
-" 
+"
 " * //missing.csail.mit.edu/2020/editors/
 " * //github.com/jerluc/polka-dots
 " * //learnvimscriptthehardway.stevelosh.com/
@@ -13,7 +13,7 @@ set nocompatible
 
 " share clipboard to make copy paste work
 set clipboard=unnamedplus
- 
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -143,15 +143,24 @@ map <silent> <C-n> :FZF!<CR>
 
 " Theme and color scheme
 colorscheme OceanicNext
+
 " syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+" configure height of initial syntastic error bar
+let g:syntastic_loc_list_height=5
+
+" syntastic off by default
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_sh_checkers = ['shellcheck']
+nnoremap <C-w>E :SyntasticCheck<CR>
 
 " local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")
