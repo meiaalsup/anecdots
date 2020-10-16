@@ -35,6 +35,7 @@ set relativenumber
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
+
 " store extra :cmdline history
 set history=1000
 
@@ -130,21 +131,42 @@ filetype plugin indent on " enable file type detection
 """"""""""""""" Plugin Configuration """""""""""""""""
 map <C-n> :NERDTreeToggle<CR>
 
+
+
 " fuzzy find
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'git@github.com:vim-syntastic/syntastic.git'
+
+" Theme and color scheme
 Plug 'git@github.com:mhartington/oceanic-next'
 call plug#end()
+
+colorscheme OceanicNext
 
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
+" status line config from //shapeshed.com/vim-statuslines/
+set statusline=
+" status line color options - run :so $VIMRUNTIME/syntax/hitest.vim
+"set statusline+=%#StatusLine#                               " colorscheme
+set statusline+=\ %.40f                                 " File name (truncated)
+set statusline+=%m
+set statusline+=%=
+set statusline+=\ %y                                        " File type
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}  " File encoding
+"set statusline+=\[%{&fileformat}\]                         " File format
+set statusline+=\ %p%%                                      " % through file
+set statusline+=\ %l/                                       " line num
+set statusline+=%L                                          " total lines
+set statusline+=\
+"set statusline+=\
 
-" Theme and color scheme
-colorscheme OceanicNext
 
-" syntastic
+
+""""" syntastic settings
+" config syntastic status line
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
