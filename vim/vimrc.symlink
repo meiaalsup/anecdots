@@ -161,9 +161,6 @@ set statusline+=\ %p%%                                      " % through file
 set statusline+=\ %l/                                       " line num
 set statusline+=%L                                          " total lines
 set statusline+=\
-"set statusline+=\
-
-
 
 """"" syntastic settings
 " config syntastic status line
