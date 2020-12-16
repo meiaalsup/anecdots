@@ -144,6 +144,14 @@ call plug#end()
 
 colorscheme OceanicNext
 
+" color picker:
+" https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+highlight Error term=None ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
+highlight SpellBad ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
+highlight SpellCap ctermfg=252 ctermbg=059 guifg=#d0d0d0 guibg=#5f5f5f
+highlight link SpellBad SyntasticCheck
+highlight link SpellCap SyntasticWarning
+
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
@@ -180,6 +188,7 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_sh_checkers = ['shellcheck']
 nnoremap <C-w>E :SyntasticCheck<CR>
+
 
 " local customizations in ~/.vimrc_local
 let $LOCALFILE=expand("~/.vimrc_local")
