@@ -138,6 +138,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'git@github.com:vim-syntastic/syntastic.git'
 
+
 " Theme and color scheme
 Plug 'git@github.com:mhartington/oceanic-next'
 call plug#end()
@@ -146,12 +147,15 @@ colorscheme OceanicNext
 
 " color picker:
 " https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
-highlight Error term=None ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
-highlight SpellBad ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
-highlight SpellCap ctermfg=252 ctermbg=059 guifg=#d0d0d0 guibg=#5f5f5f
-highlight link SpellBad SyntasticCheck
-highlight link SpellCap SyntasticWarning
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * highlight Error term=NONE cterm=NONE ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
+        \ | highlight SpellBad ctermfg=252 ctermbg=089 guifg=#d0d0d0 guibg=#87005f
+        \ | highlight SpellCap ctermfg=252 ctermbg=059 guifg=#d0d0d0 guibg=#5f5f5f
+        \ | highlight link SpellBad SyntasticCheck
+        \ | highlight link SpellCap SyntasticWarning
 
+augroup END
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
