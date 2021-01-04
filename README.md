@@ -1,5 +1,5 @@
 # Anecdots
-dotfiles and related mac os setup from scratch
+dotfiles and related environment setup from scratch
 
 ## Installation
 `git clone git@github.com:meiaalsup/anecdots`
@@ -8,7 +8,7 @@ dotfiles and related mac os setup from scratch
 `./install.sh` optional flags (-m for mac setup, -l for linux setup, -g for github config)
 
 
-## Alternative package installations without root access:
+## Alternative package installations when without root access:
 
 ### [TLDR](https://github.com/raylee/tldr-sh-client#installation)
 ```
