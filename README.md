@@ -10,7 +10,7 @@ dotfiles and related mac os setup from scratch
 
 ## Alternative package installations without root access:
 
-### TLDR
+### [TLDR](https://github.com/raylee/tldr-sh-client#installation)
 ```
 mkdir -p ~/bin
 curl -o ~/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
