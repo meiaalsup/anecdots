@@ -123,6 +123,9 @@ map - ddp
 " make spacebar select word
 map <space> viw
 
+nnoremap <C-p> :set invpaste paste?<CR>
+set pastetoggle=<C-p>
+
 nnoremap <PageUp> <C-u>
 nnoremap <PageDown> <C-d>
 
