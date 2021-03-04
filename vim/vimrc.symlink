@@ -136,15 +136,18 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 
-" fuzzy find
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'git@github.com:vim-syntastic/syntastic.git'
 
+" fuzzy find
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" syntastic
+Plug 'git@github.com:vim-syntastic/syntastic.git'
 
 " Theme and color scheme
 Plug 'git@github.com:mhartington/oceanic-next'
 call plug#end()
+
 
 colorscheme OceanicNext
 
@@ -194,6 +197,7 @@ let g:syntastic_loc_list_height=5
 " syntastic off by default
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_cpp_checkers = ['cpplint']
 nnoremap <C-w>E :SyntasticCheck<CR>
 
 
