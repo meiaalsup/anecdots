@@ -146,6 +146,8 @@ Plug 'git@github.com:vim-syntastic/syntastic.git'
 
 " Theme and color scheme
 Plug 'git@github.com:mhartington/oceanic-next'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 
