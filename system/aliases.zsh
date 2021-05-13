@@ -10,6 +10,8 @@ alias dots="cd $DOTFILES"
 alias dotfiles="cd $DOTFILES"
 alias ldots="cd $L_DOTS"
 alias dotsl="cd $L_DOTS"
+alias ref="cd $REFERENCES"
+alias references="cd $REFERENCES"
 
 
 # Detect which `ls` flavor is in use
