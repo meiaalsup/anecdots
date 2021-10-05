@@ -201,6 +201,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_cpp_checkers = ['cpplint']
 nnoremap <C-w>E :SyntasticCheck<CR>
+nnoremap <C-w>R :SyntasticReset<CR>
 
 
 " local customizations in ~/.vimrc_local
