@@ -12,7 +12,7 @@
 set nocompatible
 
 " share clipboard to make copy paste work
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Turn on syntax highlighting.
 syntax on
