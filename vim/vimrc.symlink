@@ -82,6 +82,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " Sets maximum line width
 " set textwidth=80
@@ -148,8 +149,17 @@ Plug 'git@github.com:vim-syntastic/syntastic.git'
 Plug 'git@github.com:mhartington/oceanic-next'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
+" In order for Neoformat to use a project-local version of Prettier (i.e. to
+" use node_modules/.bin/prettier instead of looking for prettier on $PATH),
+" you must set the neoformat_try_node_exe option:
+" https://prettier.io/docs/en/vim.html
+let g:neoformat_try_node_exe = 1
+autocmd BufWritePre *.ts Neoformat
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 colorscheme OceanicNext
 
@@ -197,10 +207,12 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=5
 
 " syntastic off by default
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ["ts"],'passive_filetypes': [] }
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:syntastic_go_checkers = ['go']
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_typescript_checkers=['eslint']
 nnoremap <C-w>E :SyntasticCheck<CR>
 nnoremap <C-w>R :SyntasticReset<CR>
 
