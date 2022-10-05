@@ -14,6 +14,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 
 
 # shortcuts
+alias shumai='cd ~/dev/shumai'
 # alias dev='cd ~/dev/' 
 # alias vb='VBoxManage'
 # alias jn='jupyter notebook'

@@ -86,3 +86,18 @@ bindkey \^U backward-kill-line
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/Users/malsup/.bun/_bun" ] && source "/Users/malsup/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
