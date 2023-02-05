@@ -80,9 +80,11 @@ endif
 set autoindent
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 set expandtab
-autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 
 " Sets maximum line width
 " set textwidth=80
