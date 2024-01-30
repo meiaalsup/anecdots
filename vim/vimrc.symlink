@@ -5,7 +5,6 @@
 " * //learnvimscriptthehardway.stevelosh.com/
 " * //github.com/skwp/dotfiles/blob/master/vimrc
 
-
 " `nocompatible` switches from the default Vi-compatibility mode and enables 
 " more useful Vim functionality. Not strictly necessary for ~/.vimrc, but needed
 " if config loaded in other way
@@ -13,6 +12,7 @@ set nocompatible
 
 " share clipboard to make copy paste work
 set clipboard=unnamed
+
 
 " Turn on syntax highlighting.
 syntax on
@@ -157,6 +157,7 @@ Plug 'git@github.com:mhartington/oceanic-next'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sbdchd/neoformat'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
