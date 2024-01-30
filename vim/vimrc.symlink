@@ -82,6 +82,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=0
 set expandtab
+
+" use 2 spaces for javascript and typescript
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
@@ -144,6 +146,9 @@ call plug#begin('~/.vim/plugged')
 " fuzzy find
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" Add Coc (Conquer of Completion) for autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " syntastic
 Plug 'git@github.com:vim-syntastic/syntastic.git'
 
@@ -159,9 +164,9 @@ call plug#end()
 " use node_modules/.bin/prettier instead of looking for prettier on $PATH),
 " you must set the neoformat_try_node_exe option:
 " https://prettier.io/docs/en/vim.html
-let g:neoformat_try_node_exe = 1
-autocmd BufWritePre *.ts Neoformat
-let g:vim_jsx_pretty_colorful_config = 1 " default 0
+" let g:neoformat_try_node_exe = 1
+" autocmd BufWritePre *.ts Prettier
+" let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 colorscheme OceanicNext
 
@@ -179,6 +184,16 @@ augroup END
 map <silent> <C-f> :BLines<CR>
 map <silent> <C-n> :FZF!<CR>
 
+
+" set up json to be viewable with longer text strings wrapped to 80 characters.
+autocmd FileType json setlocal wrap
+autocmd FileType json setlocal linebreak
+autocmd FileType json setlocal textwidth=80
+autocmd FileType json setlocal formatoptions-=t
+autocmd FileType json setlocal formatoptions-=c
+autocmd FileType json setlocal formatoptions-=r
+autocmd FileType json setlocal formatoptions-=o
+
 " status line config from //shapeshed.com/vim-statuslines/
 set statusline=
 " status line color options - run :so $VIMRUNTIME/syntax/hitest.vim
@@ -195,28 +210,54 @@ set statusline+=%L                                          " total lines
 set statusline+=\
 
 """"" syntastic settings
-" config syntastic status line
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" " config syntastic status line
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 
-" configure height of initial syntastic error bar
-let g:syntastic_loc_list_height=5
+"" configure height of initial syntastic error bar
+"let g:syntastic_loc_list_height=5
+"
+"" syntastic off by default
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+"let g:syntastic_sh_checkers = ['shellcheck']
+"let g:syntastic_cpp_checkers = ['cpplint']
+"let g:syntastic_go_checkers = ['go']
+"let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_typescript_checkers=['eslint']
+"nnoremap <C-w>E :SyntasticCheck<CR>
+"nnoremap <C-w>R :SyntasticReset<CR>
 
-" syntastic off by default
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ["ts"],'passive_filetypes': [] }
-let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_cpp_checkers = ['cpplint']
-let g:syntastic_go_checkers = ['go']
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_typescript_checkers=['eslint']
-nnoremap <C-w>E :SyntasticCheck<CR>
-nnoremap <C-w>R :SyntasticReset<CR>
+" Setup coc.nvim
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-pyright',
+  \ 'coc-sh',
+  \ ]
+
+" Setup ESLint and Prettier for JavaScript/TypeScript
+autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal formatexpr=CocAction('formatSelected') formatoptions+=ro
+
+" Enable CocAction for formatting Python
+autocmd FileType python setlocal formatexpr=CocAction('formatSelected') formatoptions+=ro
+
+" Format on save using CocAction for JavaScript/TypeScript and Python
+"autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.py CocActionAsync('runCommand', 'editor.action.format')
+augroup myformat
+      autocmd!
+        autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.py :CocCommand prettier.formatFile
+augroup END
+
+" Setup shellcheck for shell scripts
+let g:coc_filetype_map = {'sh': 'shellscript'}
 
 
 " local customizations in ~/.vimrc_local
