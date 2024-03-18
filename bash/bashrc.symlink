@@ -46,3 +46,5 @@ alias sshathena='ssh malsup@athena.dialup.mit.edu'
 alias sshs='ssh malsup@txe1-login.mit.edu'
 
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

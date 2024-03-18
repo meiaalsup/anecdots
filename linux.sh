@@ -1,12 +1,19 @@
 #!/bin/zsh
 
-sudo apt install htop
-sudo apt install tmux
-sudo apt install wget
-sudo apt install fzf
-sudo apt install wdiff
-sudo apt install zsh-autosuggestions
-sudo apt install shellcheck
+sudo yum install htop
+sudo yum install tmux
+sudo yum install wget
+#sudo yum install fzf
+
+#sudo yum install wdiff
+#sudo yum install zsh-autosuggestions
+#sudo yum install shellcheck
+
+# install fzf
+if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
 
 # install tldr
 mkdir -p ~/bin
