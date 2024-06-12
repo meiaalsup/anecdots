@@ -11,8 +11,7 @@ ZSH_THEME="robbyrussell"
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
 # load each one
-for file in ${(M)config_files:#*/*.zsh}
-do
+for file in "${config_files[@]}"; do
   source $file
 done
 
