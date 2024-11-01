@@ -95,7 +95,9 @@ setup_mac() {
 
     # Install Homebrew if not present
     if test ! "$(which brew)"; then
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/meiaalsup/.zprofile
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
     # Update Homebrew recipes
@@ -104,6 +106,7 @@ setup_mac() {
     # Install all our dependencies with bundle (See Brewfile)
     brew tap homebrew/bundle
     brew bundle
+    brew install fzf
 
     # PRIVATEDIR="${HOME}/private"
     # git clone git@github.com:meiaalsup/private "$PRIVATEDIR" # private keys / authentication
