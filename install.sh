@@ -107,6 +107,9 @@ setup_mac() {
     brew tap homebrew/bundle
     brew bundle
     brew install fzf
+    brew install npm
+    brew install yarn
+    npm install next@latest react@latest react-dom@latest
 
     # PRIVATEDIR="${HOME}/private"
     # git clone git@github.com:meiaalsup/private "$PRIVATEDIR" # private keys / authentication

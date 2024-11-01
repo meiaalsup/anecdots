@@ -30,6 +30,7 @@ brew "bash-completion"
 brew "pyenv"
 brew "cmake"
 brew "clang-format"
+#brew "npm"
 #brew "yarn"
 #brew "go"
 
