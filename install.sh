@@ -110,6 +110,8 @@ setup_mac() {
     brew install npm
     brew install yarn
     npm install next@latest react@latest react-dom@latest
+    npm install prisma @prisma/client
+
 
     # PRIVATEDIR="${HOME}/private"
     # git clone git@github.com:meiaalsup/private "$PRIVATEDIR" # private keys / authentication
