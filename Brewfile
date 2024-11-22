@@ -52,14 +52,3 @@ brew "fzf"
 brew "zsh-autosuggestions"
 brew "shellcheck" # useful in vim syntastic and as stand-alone
 
-# Cask installation
-#cask "iterm2"
-cask "visual-studio-code"
-#cask "google-chrome"
-#cask "firefox"
-#cask "virtualbox" # might require permissions in security settings
-#cask "postman"
-#cask "slack"
-cask "whatsapp"
-
-
